@@ -10,7 +10,7 @@ public class Consumatore extends Thread{
 
     public void arresta() {
         this.running = false;
-        System.out.println("Thread " + super.getName() + " terminato");
+        System.out.println("Thread " + super.getName() + " terminato"); // il Thread comunica la sua fine 
     }
 
     public void run() {

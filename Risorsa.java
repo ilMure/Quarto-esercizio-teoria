@@ -9,9 +9,9 @@ public class Risorsa {
             } catch (InterruptedException e) {
             }
         }
-        System.out.println(Thread.currentThread().getName() +" ha consumato "+val);
+        System.out.println(Thread.currentThread().getName() +" ha consumato "+val); // valore consumato dal Thread "consumatore" (current, che sta accedendo alla risorsa)
         disponibile = false;
-        notifyAll();
+        notifyAll(); //notifica tutti i produttori
         return val;
     }
 
@@ -24,7 +24,7 @@ public class Risorsa {
         }
         this.val = val;
         disponibile = true;
-        System.out.println(Thread.currentThread().getName() +" ha prodotto "+val);
-        notifyAll();
+        System.out.println(Thread.currentThread().getName() +" ha prodotto "+val); // valore prodotto dal Thread "produttore" (current)
+        notifyAll(); //notifica tutti i consumatori 
     }
 }

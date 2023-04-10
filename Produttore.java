@@ -10,12 +10,12 @@ public class Produttore extends Thread{
 
     public void arresta() {
         this.running = false;
-        System.out.println("Thread " + super.getName() + " terminato");
+        System.out.println("Thread " + super.getName() + " terminato"); // il Thread comunica la sua fine 
     }
 
     public void run() {
         while (running) {
-            this.val = (int) ((Math.random()) * 100);
+            this.val = (int) ((Math.random()) * 100); // valore intero casuale che verrà prodotto
             r.produci(val);
             try {
                 Thread.sleep(1000);
